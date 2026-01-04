@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Take Notes</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0b1220" />
   </head>
   <body>
     <header class="topbar">
@@ -58,16 +60,28 @@
             />
 
             <div class="panel-actions">
-              <button id="recordBtn" class="btn" type="button" title="Start/Stop recording">
+              <button
+                id="recordBtn"
+                class="btn"
+                type="button"
+                title="Start/Stop recording"
+              >
                 🎙️ Record
               </button>
 
-              <span id="recordStatus" class="pill muted" aria-live="polite">Idle</span>
+              <span id="recordStatus" class="pill muted" aria-live="polite"
+                >Idle</span
+              >
 
               <button id="pinBtn" class="btn" type="button" title="Pin/unpin">
                 📌 Pin
               </button>
-              <button id="deleteBtn" class="btn danger" type="button" title="Delete">
+              <button
+                id="deleteBtn"
+                class="btn danger"
+                type="button"
+                title="Delete"
+              >
                 🗑 Delete
               </button>
             </div>
@@ -88,6 +102,12 @@
       &copy 2025 Take Notes. All rights reserved.
     </footer>
 
+    <script>
+        if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
