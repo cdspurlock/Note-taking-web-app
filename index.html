@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take Notes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">📝</div>
+        <div>
+          <h1>Notes</h1>
+          <p class="muted">Fast, simple, local + voice.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <label class="search">
+          <span>🔎</span>
+          <input id="searchInput" type="search" placeholder="Search notes..." />
+        </label>
+
+        <button id="newNoteBtn" class="btn primary" type="button">
+          + New note
+        </button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <h2>All notes</h2>
+          <div class="count"><span id="noteCount">0</span></div>
+        </div>
+
+        <div id="noteList" class="note-list" aria-label="Notes list"></div>
+      </aside>
+
+      <section class="editor">
+        <div id="emptyState" class="empty">
+          <h2>No note selected</h2>
+          <p class="muted">Create a note or select one from the list.</p>
+          <button id="emptyNewBtn" class="btn primary" type="button">
+            + New note
+          </button>
+        </div>
+
+        <div id="editorPanel" class="panel hidden">
+          <div class="panel-top">
+            <input
+              id="titleInput"
+              class="title"
+              type="text"
+              placeholder="Note title"
+              autocomplete="off"
+            />
+
+            <div class="panel-actions">
+              <button id="recordBtn" class="btn" type="button" title="Start/Stop recording">
+                🎙️ Record
+              </button>
+
+              <span id="recordStatus" class="pill muted" aria-live="polite">Idle</span>
+
+              <button id="pinBtn" class="btn" type="button" title="Pin/unpin">
+                📌 Pin
+              </button>
+              <button id="deleteBtn" class="btn danger" type="button" title="Delete">
+                🗑 Delete
+              </button>
+            </div>
+          </div>
+
+          <div class="meta muted" id="metaText">Last edited: —</div>
+
+          <textarea
+            id="bodyInput"
+            class="body"
+            placeholder="Write your note..."
+          ></textarea>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer muted">
+      Tip: Voice transcription works best in Chrome/Edge. Use HTTPS or localhost.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
